@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">e34</string>
+    <string name="title_home">Fahrzeug</string>
+    <string name="title_dashboard">Entwickler</string>
+    <string name="title_notifications">Info</string>
+</resources>
