@@ -4,8 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activitysplashscreen"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingTop="24dp">
 
+    <!-- Sunblind -->
+    <TextView
+        android:text="Sonnenblende"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+    android:id="@+id/txtSunblind"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSunblindOpen"
+        android:text="Öffnen"
+        android:layout_below="@+id/txtSunblind"
+    />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSunblindClose"
+        android:text="Schließen"
+        android:layout_toRightOf="@+id/btnSunblindOpen"
+        android:layout_below="@+id/txtSunblind"
+    />
+
+
+    <!-- Sunroof -->
+    <TextView
+        android:text="Schiebedach"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/txtSunroof"
+        android:paddingTop="20dp"
+        android:layout_below="@+id/btnSunblindClose"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSunroofOpen"
+        android:text="Öffnen"
+        android:layout_below="@+id/txtSunroof"
+    />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSunbroofClose"
+        android:text="Schließen"
+        android:layout_toRightOf="@+id/btnSunroofOpen"
+        android:layout_below="@+id/txtSunroof"
+    />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSunbroofSlide"
+        android:text="Kipp"
+        android:layout_toRightOf="@+id/btnSunbroofClose"
+        android:layout_below="@+id/txtSunroof"
+    />
 	
 	
 

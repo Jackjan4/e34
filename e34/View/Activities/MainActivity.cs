@@ -1,4 +1,5 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
@@ -13,7 +14,9 @@ namespace e34
     {
 
 
-        private Fragment loginFragment;
+        private Fragment _currentLoginFragment;
+
+        
 
 
         /// <summary>
@@ -25,7 +28,9 @@ namespace e34
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-            loginFragment = LoginFragment.NewInstance();
+            LoginFragment lFrag = LoginFragment.NewInstance();
+            lFrag.OnLoginCorrect += OnLogin;
+            _currentLoginFragment = lFrag;
 
 
             // Attach event handler to BottomNavigationView
@@ -34,6 +39,12 @@ namespace e34
 
             // Create your fragment here
             
+        }
+
+        private void OnLogin() {
+
+            _currentLoginFragment = DevFragment.NewInstance();
+            FragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, _currentLoginFragment).Commit();
         }
 
 
@@ -51,7 +62,7 @@ namespace e34
                     FragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, CarFragment.NewInstance()).Commit();
                     return true;
                 case Resource.Id.navigation_dashboard:
-                    FragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, LoginFragment.NewInstance()).Commit();
+                    FragmentManager.BeginTransaction().Replace(Resource.Id.content_frame, _currentLoginFragment).Commit();
                     return true;
                 case Resource.Id.navigation_notifications:
                     FragmentManager.BeginTransaction().Replace(Resource.Id.content_frame,InfoFragment.NewInstance()).Commit();

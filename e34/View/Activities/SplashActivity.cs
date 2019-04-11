@@ -8,7 +8,6 @@ using Android.Widget;
 using System;
 using System.Threading;
 using System.Timers;
-using System.Timers;
 
 namespace e34
 {

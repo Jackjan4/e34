@@ -15,6 +15,13 @@ namespace e34
 {
     public class LoginFragment : Fragment, View.IOnClickListener
     {
+
+        public delegate void LoginDelegate();
+
+        public event LoginDelegate OnLoginCorrect;
+
+        private EditText txtPw;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,15 +40,23 @@ namespace e34
             // Use this to return your custom view for this Fragment
              View view = inflater.Inflate(Resource.Layout.fragment_login, container, false);
 
+            txtPw = view.FindViewById<EditText>(Resource.Id.txtPw);
+
             Button btnLogin = view.FindViewById<Button>(Resource.Id.btnLogin);
             btnLogin.SetOnClickListener(this);
+
+
 
             return view;
         }
 
+
+
         public void OnClick(View v)
         {
-            
+            if (txtPw.Text == "jackjan") {
+                OnLoginCorrect();
+            }
         }
     }
 }

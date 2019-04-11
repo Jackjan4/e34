@@ -59,6 +59,7 @@
     <Compile Include="BluetoothSerialService.cs" />
     <Compile Include="Bluetooth\BluetoothSerialService.cs" />
     <Compile Include="View\Fragments\CarFragment.cs" />
+    <Compile Include="View\Fragments\DevFragment.cs" />
     <Compile Include="View\Fragments\LoginFragment.cs" />
     <Compile Include="View\Fragments\InfoFragment.cs" />
     <Compile Include="View\Activities\MainActivity.cs" />
@@ -175,6 +176,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_login.axml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_dev.axml">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <SubType>Designer</SubType>
     </AndroidResource>
